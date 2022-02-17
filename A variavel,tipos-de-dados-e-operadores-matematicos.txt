@@ -1,0 +1,122 @@
+                V     A     R     I     A     V    E    L
+
+C O N C E I T U A Ç Ã O
+Um espaço na memoria do computador onde se pode guardar valores.
+
+existem 4 tipos:
+Instância: objeto
+Classe: classe?
+Local: dentro de metodos
+Parâmetro: na assinatura do método
+
+variáveis iniciais sao criadas no metodo main
+
+C R I A Ç Ã O
+Padrão de definição:
+<?visibilidade?><?modificador?>tipo nome<?=valorinicial?>; - os que estão com interrogações sao opcionais podemos criar variável sem eles
+
+V:"public","protected" e "private"
+M:"static" e "final" - final é um valor que nao irá mudar
+T: tipo de dado - é obrigatório, sempre tem que ser definido. (java é uma linguagem fortemente tipada)
+N: nome que é fornecido a variável
+VI: um valor inicial, caso se deseje - opcional
+
+Convenções e regras:
+
+# Não devem começar com números;
+# Embora permitido "$" e "_" (simbolos,caracteres especiais) devem ser evitados;
+# São case-sensitive; exemplo, variável linha e Linha são diferentes pois o L está maiusculo.
+# Sem espaços;
+# Não podem ser as palavras reservadas do Java;
+
+Exemplos:
+
+int i; certo
+int I; diferente da de cima
+int 1a; errada, nao pode começar com número
+int _1a; não vai dar erro, porém é bom evitar.
+int I = 10; informando um valor inicial
+int final j = 10; é um valor constante, nao muda.
+int asrn24678md; é válido
+int asrn246 78md; nao é permitido visto que tem espaço na variavel
+int asrn2S4678_md = 10; é válido mas nao é recomendado.
+int asrn2S46%78_md = 10; nao é permitido caractere especial (@, % e etc);
+
+Boas práticas:
+
+# Sempre começar com letra minúscula;
+# Nomes expressivos; para poder olhar e entender de forma simples para que servirá.
+# Notação camelo; anda junto com os nomes expressivos, basicamente para facilitar o entendimento da variável pode ser usada como a letra maiuscula. pescar-Pescar, de certo para fazer outra função parecida ou complementar?
+# Quando constante(final) maiúscula e separada por "_".
+
+Exemplos:
+# int quantidadeProduto - camelo, se fosse quantidadeProdutoNovo,quantidadeProdutoCancelado.
+
+# int QuantidadeProduto; nao é uma boa pratica pq começa tudo com maiusculo
+# int final NUMERO_TENTATIVAS = 5; padrão para constante
+#int qtdProd; nao é expressivo, pode acarretar em erro de interpretação, terá que rever o código para entender oque é isso, custa mais tempo.
+
+
+tipos de dados:
+em sequencia, byte-short-int-long-float-double- suportam diferentes quantidades de numeros.
+
+
+Valores Default:
+tipos inteiros sao 0
+tipos reais sao 0.0
+
+char = '\u0000' - significa vazio, nada;
+string = null  - também significa vazio, nada;
+boolean = false
+
+Tipos de operadores matemáticos
+
+#pós-fixado: exp++ ou exp-- // usa de forma tardia, no caso vai usar o exp primeiro para depois somar ou subtrair
+#prefixado: ++exp ou --exp // primeiro soma ou subtrai e depois faz o exp.
+#aritimético: +,-,*,/ e %
+#atribuição: =, +=, -=, *=, /= e %=
+
+Exemplos:
+
+int i = ++k >> i = k + 1
+int j = k-- >> j = k >> k = k - 1
+float f = 1.5f + 4.5f; 
+long l = 10398L * 5L;
+double d = 45d / 4d;
+int k = 15 % 4;
+double d = f;
+i += 5 >> i = i + 5
+j -= 3 >> j = j - 3
+d /= 2.7d >> d = d / 2.7d;
+l *= 3 >> l = l * 3;
+k %= 2 >> k = k % 2; 
+
+Prioridade de execução dos operadores aritiméticos:
+
+1: Pós-fixado >> exp++, exp--
+2: Prefixado >> ++exp, --exp
+3: Multiplicativo >> *,/,%
+4: aditivo >> +, -
+5: Atribuição >> =, +=, -=, *=, /=, %= // a principio atribuição na verdade é da direita pra esquerda a ordem, testado no programa.
+
+
+Conversões - CASTING
+
+Tipos:
+
+#Upcast(implícito)
+#Downcast(explícito)
+
+Exemplos:
+
+# long l; int i = 10; l = i; (implicito) promovendo inteiro para long, nao precisa informar qual o tipo.
+
+# int i; long l = 100; i = (int) l; (explicito) rebaixando long para inteiro , precisa informar que o tipo será (int).
+
+# double d; float f = 10.5f; d = f; (implicito) promovendo float para double, nao precisa informar qual o tipo
+
+# float f; double d = 10.5d; f = (float) d; (explicito) rebaixando double para float, precisando informar o tipo (float)
+
+# int i; float f = 10.5f; i = (int) f; (explicito) rebaixando float para inteiro, precisando informar o tipo (int) porém esse tipo irá descartar a parte decimal e só pegar a parte inteira, havendo perda de dados (chamado truncar-truncando)
+
+
